@@ -1,4 +1,9 @@
 import './App.css';
+const list = [
+  { "firstname": "Adam", "lastname": "Kowalski", "age": "33"},
+  { "firstname": "Izabela", "lastname": "Makowska", "age": "25"},
+  { "firstname": "Jan", "lastname": "Urbański", "age": "46"}
+];
 
 function App() {
   return (
@@ -10,19 +15,19 @@ function App() {
           <th>Wiek</th>
         </tr>
         <tr>
-          <td>Adam</td>
-          <td>Kowalski</td>
-          <td>33</td>
+          <td>{list[0].firstname}</td>
+          <td>{list[0].lastname}</td>
+          <td>{list[0].age}</td>
         </tr>
         <tr>
-          <td>Izabela</td>
-          <td>Makowska</td>
-          <td>25</td>
+          <td>{list[1].firstname}</td>
+          <td>{list[1].lastname}</td>
+          <td>{list[1].age}</td>
         </tr>
         <tr>
-          <td>Jan</td>
-          <td>Urbański</td>
-          <td>46</td>
+          <td>{list[2].firstname}</td>
+          <td>{list[2].lastname}</td>
+          <td>{list[2].age}</td>
         </tr>
       </table>
     </div>
