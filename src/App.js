@@ -1,7 +1,11 @@
 import './App.css';
 
 function isAdult(age) {
-  return age >= 18? "TAK" : "NIE";
+  if (age>=18) {
+    return "TAK";
+  } else {
+    return "NIE";
+  }
 }
 
 function formatting(text) {
