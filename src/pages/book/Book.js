@@ -37,12 +37,10 @@ class Book extends Component {
             <div>
                 <Heder />
                 {
-                    this.state.books.map((book, i) =>
-                    <BookDescription key={i} book={book} />
-                    )
-                    
+                    this.state.books.map((book, index) => (
+                        <BookDescription key={index}  book={book}/>
+                    ))
                 }
-                
                 <Footer />
             </div>
         );
