@@ -38,7 +38,7 @@ class Book extends Component {
                 <Heder />
                 {
                     this.state.books.map((book, i) =>
-                    <BookDescription key={i} title={book.title} author={book.author} pages={book.pages} />
+                    <BookDescription key={i} book={book} />
                     )
                     
                 }
