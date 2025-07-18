@@ -9,21 +9,25 @@ class Book extends Component {
         this.state = {
             books: [
                 {
+                    id: 1,
                     title: "Hobbit",
                     author: "J. R. Tolkien",
                     pages: "455"
                 },
-                                {
+                {
+                    id: 2,
                     title: "Rok 1984",
                     author: "G. Orwel",
                     pages: "455"
                 },
-                                {
+                {
+                    id: 3,
                     title: "Władca Pierścieni",
                     author: "J. R. Tolkien",
                     pages: "669"
                 },
-                                {
+                {
+                    id: 4,
                     title: "Stary człowiek i morze",
                     author: "E. Hemigway",
                     pages: "226"
@@ -36,11 +40,13 @@ class Book extends Component {
         this.setState({
             books: [
                 {
+                    id: 1,
                     title: "Hobbit",
                     author: "J. R. Tolkien",
                     pages: "455"
                 },
                 {
+                    id: 3,
                     title: "Władca Pierścieni",
                     author: "J. R. Tolkien",
                     pages: "669"
@@ -54,6 +60,7 @@ class Book extends Component {
             books: [
                 ...prevState.books,
                 {
+                    id: 5,
                     title: "Nowy wspaniały świat",
                     author: "A. Huxley",
                     pages: "255"
@@ -62,6 +69,11 @@ class Book extends Component {
         }));
     };
 
+    handleDelete = (id) => {
+        this.setState((prevState) => ({
+            books: prevState.books.filter(book => book.id !== id)
+        }));
+    }
     render() {
         return (
             <div>
@@ -70,7 +82,7 @@ class Book extends Component {
                 <button onClick={this.addNewBook}>Dodaj nową książkę</button>
                 {
                     this.state.books.map((book, index) => (
-                        <BookDescription key={index}  book={book}/>
+                        <BookDescription key={index}  book={book} onDelete={this.handleDelete}/>
                     ))
                 }
                 <Footer />
